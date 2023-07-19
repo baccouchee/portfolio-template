@@ -33,9 +33,9 @@ const Navbar = () => {
             outline-sky-400 focus-visible:outline`}
           >
             {activeTab === tab.id && (
-              <motion.div layoutId="active-pill" className="absolute inset-0 rounded-full bg-main" />
+              <motion.div layoutId="active-pill" className="absolute inset-0 px-2 border-b-2 border-main" />
             )}
-            <span className="relative">{tab.label}</span>
+            <span className="relative z-10 mix-blend-exclusion">{tab.label}</span>
           </button>
         ))}
       </ul>
@@ -49,7 +49,7 @@ const Navbar = () => {
             : 'fixed left-[-100%]'
         }
       >
-        <h1 className="w-full text-3xl font-bold text-[#00df9a] m-4">REACT.</h1>
+        <h1 className="w-full text-3xl font-bold text-[#00df9a] m-4">OMAR.</h1>
         <ul className="uppercase p-4">
           <li className="p-4 border-b border-gray-600">Ressources</li>
           <li className="p-4 border-b border-gray-600">Company</li>

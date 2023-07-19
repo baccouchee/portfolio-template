@@ -5,8 +5,9 @@ module.exports = {
     extend: {
       colors : {
         main : '#00df9a'
-      }
+      },
+      fontFamily : { body : ['Roboto Mono'] }
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }
