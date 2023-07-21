@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './components/navbar'
 import Hero from './components/hero'
 import Analytics from './components/Analytics'
+import Technologie from './components/Technologie'
 
 export function App() {
   return (
@@ -10,6 +11,7 @@ export function App() {
         <Navbar />
         <Hero />
         <Analytics />
+        <Technologie />
       </div>
     </>
   )
