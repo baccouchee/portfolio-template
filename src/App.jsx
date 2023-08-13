@@ -3,6 +3,8 @@ import Navbar from './components/navbar'
 import Hero from './components/hero'
 import Analytics from './components/Analytics'
 import Technologie from './components/Technologie'
+import Expertise from './components/Expertise'
+import Experience from './components/Experience'
 
 export function App() {
   return (
@@ -10,8 +12,9 @@ export function App() {
       <div>
         <Navbar />
         <Hero />
-        <Analytics />
-        <Technologie />
+        <Expertise />
+        <Experience />
+        {/* <Technologie /> */}
       </div>
     </>
   )

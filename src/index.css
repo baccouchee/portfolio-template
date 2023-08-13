@@ -5,5 +5,19 @@
 @tailwind utilities;
 
 body {
-    background-color: #000300;
+    background-color: #1A191D;
+
 }
+
+/* Add this CSS to create the text-stroke effect */
+.text-stroke {
+    -webkit-text-fill-color: transparent; /* Set the text color to transparent */
+    -webkit-text-stroke-width: 1px; /* Adjust the width of the text stroke as needed */
+    text-stroke-width: 1px; /* For non-WebKit browsers */
+    -webkit-text-stroke-color: #00df9a; /* Set the color for the text stroke */
+    text-stroke-color: #00df9a; /* For non-WebKit browsers */
+  }
+  .backdrop-blur-md {
+    backdrop-filter: blur(10px);
+  }
+  

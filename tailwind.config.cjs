@@ -6,7 +6,10 @@ module.exports = {
       colors : {
         main : '#00df9a'
       },
-      fontFamily : { body : ['Roboto Mono'] }
+      fontFamily : { body : ['Roboto Mono'] },
+      boxShadow: {
+        glow: '0 0 20px 0 rgba(255, 255, 255, 0.5)',
+      },
     },
   },
   plugins: [require('@tailwindcss/typography')],

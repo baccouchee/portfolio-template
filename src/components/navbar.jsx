@@ -20,8 +20,8 @@ const Navbar = () => {
   let [activeTab, setActiveTab] = useState(tab[0].id)
 
   return (
-    <div className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white">
-      <h1 className="w-full text-3xl font-bold text-[#00df9a]">OMAR.</h1>
+    <div className="flex justify-between items-center h-24 bg-body mx-auto px-4 text-white">
+      <h1 className="w-full text-3xl font-bold text-main font-body">OMAR.</h1>
       <ul className="hidden md:flex">
         {tab.map(tab => (
           <button
@@ -35,13 +35,14 @@ const Navbar = () => {
             {activeTab === tab.id && (
               <motion.div layoutId="active-pill" className="absolute inset-0 px-2 border-b-2 border-main" />
             )}
-            <span className="relative z-10 mix-blend-exclusion">{tab.label}</span>
+            <span className="relative font-body">{tab.label}</span>
           </button>
         ))}
       </ul>
       <div onClick={handleNav} className="block md:hidden">
         {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
       </div>
+
       <div
         className={
           nav
