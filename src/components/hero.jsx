@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import '../index.css'
+
 const Hero = () => {
   return (
-    <div className="w-full h-full mx-auto text-center flex flex-col justify-center bg-body">
+    <div className="w-full h-full mx-auto text-center flex flex-col justify-center bg-body" id="hero">
       <p className="text-stroke text-body text-transparent font-bold md:text-4xl font-body uppercase mt-10">
         Elevating Web Experiences
       </p>
+
       <h1 className="md:text-3xl text-white sm:text-xl   text-l font-body font-light md:py-6 mt-10">Hi, i am Omar</h1>
       <p className="md:text-3xl text-white sm:text-xl  text-l font-body font-light">
         Software Engineer, Front End & App Developer

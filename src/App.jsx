@@ -1,10 +1,11 @@
 import React from 'react'
 import Navbar from './components/navbar'
 import Hero from './components/hero'
-import Analytics from './components/Analytics'
-import Technologie from './components/Technologie'
+
 import Expertise from './components/Expertise'
-import Experience from './components/Experience'
+import ExperienceBlock from './components/ExperienceBlock'
+import Footer from './components/Footer'
+import ContactForm from './components/ContactForm'
 
 export function App() {
   return (
@@ -13,8 +14,9 @@ export function App() {
         <Navbar />
         <Hero />
         <Expertise />
-        <Experience />
-        {/* <Technologie /> */}
+        <ExperienceBlock />
+        <ContactForm />
+        <Footer />
       </div>
     </>
   )
