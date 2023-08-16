@@ -1,48 +1,41 @@
 import React from 'react'
 import Experience from './Experience'
-
+import CV_OMAR_BACCOUCHE from '../Assets/CV_OMAR_BACCOUCHE.pdf'
+import arrow from '../Assets/right-arrow-svgrepo-com.svg'
 const ExperienceBlock = () => {
   const experiences = [
     {
-      date: 'July - Dec 2017',
-      title: 'UI Engineer Co-op @ Apple',
+      date: 'Sept 2017 - June 2022',
+      title: 'FullStack Web and Mobile Software Engineer @ ESPRIT (EUR-ACE)',
       description: [
-        'Developed and styled interactive web applications for Apple Music using Ember and SCS',
-        'Built and shipped the Apple Music Extension for Facebook Messenger leveraging third-party and internal API integration',
-        "Architected and implemented the user interface of Apple Music's embeddable web player widget for in-browser user authorization and full song playback",
+        'Completed a comprehensive software engineering program with a specialization in web and mobile information systems.',
       ],
+      technologie: ['ReactJS', 'NodeJS', 'ES6', 'Angular', 'Tailwind', 'MUI', 'ExpressJS'],
     },
     {
-      date: 'Jan - May 2018',
-      title: 'Frontend Developer Intern @ Google',
+      date: 'Feb 2023 - July 2023',
+      title: 'Spotfire Developer @ EY',
       description: [
-        'Collaborated with design and engineering teams to create user-friendly web interfaces for Google Drive',
-        'Implemented responsive layouts using HTML, CSS, and JavaScript for improved mobile experience',
-        'Contributed to the development of a real-time collaborative document editing feature',
+        "Designed and developed interactive dashboards using Spotfire for Renault Group's data visualization needs.",
+        'Employed technical tools and methodology including Spotfire, IronPython, JavaScript, HTML, and Scrum.',
       ],
+      technologie: ['Spotfire', 'IronPython', 'JavaScript', 'HTML', 'Scrum'],
     },
     {
-      date: 'June - Aug 2019',
-      title: 'Software Engineering Intern @ Microsoft',
+      date: 'March 2022 - Sept 2022',
+      title: 'Full-Stack Developer Internship @ EY',
       description: [
-        'Worked on a cross-functional team to develop features for Microsoft Teams, a collaboration platform',
-        'Designed and implemented RESTful APIs using Node.js and Express for seamless data integration',
+        'Spearheaded the design and implementation of a platform for monitoring and automating the process of audit program creation.',
+        'Leveraged technical tools and methodology such as ReactJS, NodeJS, MongoDB, Figma, and Scrum.',
       ],
-    },
-    {
-      date: 'Sept - Dec 2020',
-      title: 'Lead Frontend Developer @ TechCo',
-      description: [
-        'Led a team of frontend developers in building and maintaining web applications for clients',
-        'Implemented modern UI/UX practices and responsive designs for various projects',
-      ],
+      technologie: ['ReactJS', 'NodeJS', 'MongoDB', 'Figma', 'Scrum'],
     },
     // Add more experience objects as needed
   ]
 
   // Add more experience objects here
   return (
-    <div>
+    <section id="experience">
       <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-20 text-center text-white">
         Professional Experience
       </h1>
@@ -59,9 +52,24 @@ const ExperienceBlock = () => {
           {experiences.map((experience, index) => (
             <Experience key={index} experience={experience} />
           ))}
+          <div className="flex">
+            <a
+              href={CV_OMAR_BACCOUCHE}
+              download={CV_OMAR_BACCOUCHE}
+              className="text-white flex items-center hover:text-gray-300 hover:underline transition duration-300"
+            >
+              View Full Résumé
+            </a>
+            <img
+              src={arrow}
+              width="2.5%"
+              height="2.5%"
+              className="ml-2 mt-0.5 transform translate-x-0 transition-transform duration-300 hover:translate-x-1"
+            />
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

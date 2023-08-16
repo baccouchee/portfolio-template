@@ -5,6 +5,7 @@ import Hero from './components/hero'
 import Expertise from './components/Expertise'
 import ExperienceBlock from './components/ExperienceBlock'
 import Footer from './components/Footer'
+import ContactForm from './components/ContactForm'
 
 export function App() {
   return (
@@ -14,6 +15,7 @@ export function App() {
         <Hero />
         <Expertise />
         <ExperienceBlock />
+        <ContactForm />
         <Footer />
       </div>
     </>

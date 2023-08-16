@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import { motion } from 'framer-motion'
+import '../index.css'
 
 const Navbar = () => {
   let tab = [
     { id: 'Home', label: 'Home' },
-    { id: 'Company', label: 'Company' },
-    { id: 'Ressources', label: 'Ressources' },
-    { id: 'About', label: 'About' },
+    { id: 'Expertise', label: 'Expertise' },
+    { id: 'Experience', label: 'Experience' },
     { id: 'Contact', label: 'Contact' },
   ]
 
@@ -19,8 +19,29 @@ const Navbar = () => {
 
   let [activeTab, setActiveTab] = useState(tab[0].id)
 
+  const [scrolling, setScrolling] = useState(false)
+
+  const handleScroll = () => {
+    if (window.scrollY > 1) {
+      setScrolling(true)
+    } else {
+      setScrolling(false)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
-    <div className="flex justify-between items-center h-24 bg-body mx-auto px-4 text-white">
+    <div
+      className={`flex justify-between items-center h-24 bg-body mx-auto px-4 text-white ${
+        scrolling ? 'fixed-navbar' : ''
+      }`}
+    >
       <h1 className="w-full text-3xl font-bold text-main font-body">OMAR.</h1>
       <ul className="hidden md:flex">
         {tab.map(tab => (

@@ -16,6 +16,16 @@ const Experience = ({ experience }) => {
               <li key={index}>{desc}</li>
             ))}
           </ul>
+          <div className="w-full flex flex-wrap p-2 mt-2">
+            {experience.technologie.map((tech, index) => (
+              <span
+                key={index}
+                className="rounded-full px-3 py-1 bg-[#00DF9A] bg-opacity-10 text-[#00DF9A] font-normal mr-2 mb-2"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </div>
