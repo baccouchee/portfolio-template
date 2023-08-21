@@ -1,0 +1,57 @@
+/* Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+    padding: 0 2rem;
+    background-color: #333; /* Adjust to your color */
+    color: white; /* Adjust to your color */
+  }
+  
+  .navbar-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 2rem;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav-icon {
+    display: none;
+    cursor: pointer;
+  }
+  
+  /* Adjustments for mobile view */
+  @media (max-width: 768px) {
+    .nav-icon {
+      display: block;
+    }
+  
+    /* Use a CSS class to toggle visibility */
+    .nav-links-mobile {
+      display: none;
+    }
+  
+    .nav-links-mobile.open {
+      display: block;
+      position: absolute;
+      top: 4rem;
+      left: 0;
+      background-color: #222; /* Adjust to your color */
+      width: 100%;
+      text-align: center;
+      padding: 1rem 0;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  }
+  

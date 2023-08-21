@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ExpertiseElem = ({ text, desc, color, svgPath }) => {
+const ExpertiseElem = ({ text, desc, svgPath }) => {
   return (
     <>
       <div className="flex">

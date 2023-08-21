@@ -15,60 +15,63 @@ const Expertise = () => {
   }
   const expertiseData = [
     {
-      text: 'Software Development',
-      desc: 'Lorem ipsum dolor',
+      text: 'Software Engineer',
+      desc: 'My proficiency in various programming languages and problem-solving techniques allows me to create robust and efficient solutions that meet user needs and business goals.',
       color: '#61dbfb',
+      svgPath: desktop,
+    },
+    {
+      text: 'FullStack Developer',
+      desc: 'With a deep understanding of both front-end and back-end technologies, I am dedicated to delivering seamless and feature-rich web applications that deliver exceptional user experiences.',
+      color: '#303030',
       svgPath: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg',
     },
     {
-      text: 'Frontend Dev React, NextJS',
-      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam exped',
-      color: '#303030',
+      text: 'Mobile Developer',
+      desc: 'Experienced in crafting visually appealing and high-performance mobile apps using Flutter. Passionate about delivering engaging user experiences on the Android platform.',
+      color: '#FFFFFF',
       svgPath: 'https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg',
     },
-    {
-      text: 'Flutter Dev Android',
-      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam exped',
-      color: '#FFFFFF',
-      svgPath: desktop,
-    },
   ]
-  return (
-    <div className="w-full py-16 px-10 text-center flex flex-col font-body text-white relative" id="expertise">
-      {/* Add the PNG image as a background */}
-      <div
-        className="absolute top-0 left-0 w-full h-full opacity-30"
-        style={{
-          backgroundImage: `url(${helloWordCode})`,
-          backgroundSize: '40%',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-          backgroundPositionY: '50%',
-          zIndex: '-1',
-        }}
-      ></div>
 
-      <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-20">My Expertise</h1>
-      <div className="text-white md:flex space-y-4 md:space-y-0">
-        {expertiseData.map((expertise, index) => (
-          <div
-            key={index}
-            className={`w-full border-slate-500 border-2 p-4 flex-grow ${hover ? 'hover:bg-slate-400' : ''} ${
-              index === expertiseData.length - 1 ? '' : 'border-r-0'
-            } ${index === expertiseData.length - 1 ? 'border-r-1' : ''}`}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <ExpertiseElem
-              text={expertise.text}
-              color={expertise.color}
-              desc={expertise.desc}
-              svgPath={expertise.svgPath}
-            />
-          </div>
-        ))}
+  return (
+    <section id="expertise">
+      <div className="w-full py-16 px-10 text-center flex flex-col font-body text-white relative" id="expertise">
+        {/* Add the PNG image as a background */}
+        <div
+          className="absolute top-0 left-0 w-full h-full opacity-30"
+          style={{
+            backgroundImage: `url(${helloWordCode})`,
+            backgroundSize: '40%',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            backgroundPositionY: '50%',
+            zIndex: '-1',
+          }}
+        ></div>
+
+        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-20">My Expertise</h1>
+        <div className="text-white md:flex space-y-4 md:space-y-0">
+          {expertiseData.map((expertise, index) => (
+            <div
+              key={index}
+              className={`w-full border-slate-500 border-2 p-4 flex-grow ${
+                index < expertiseData.length - 1 ? 'md:border-r-0' : ''
+              } ${hover ? 'hover:bg-slate-400' : ''}`}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <ExpertiseElem
+                text={expertise.text}
+                color={expertise.color}
+                desc={expertise.desc}
+                svgPath={expertise.svgPath}
+              />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   )
 }
 
