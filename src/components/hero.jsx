@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import '../index.css'
+import { Link } from 'react-scroll'
 
 const Hero = () => {
   return (
@@ -20,14 +21,16 @@ const Hero = () => {
         <div class="flex justify-center items-center  my-6">
           <div class="relative inline-flex  group  my-8">
             <div class="absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt"></div>
-            <a
-              href="#"
+            <Link
+              to="form"
+              smooth={true}
+              duration={500}
               title="Get quote now"
               class="relative inline-flex items-center justify-center px-8 py-4 text-lg font-normal text-white transition-all duration-200 bg-gray-900 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 font-body"
               role="button"
             >
               Contact Me
-            </a>
+            </Link>
           </div>
         </div>
         <div className="mx-auto h-10 border mb-12 border-white rounded-full">
