@@ -5,15 +5,15 @@ const Hero = () => {
   return (
     <section id="hero">
       <div className="w-full h-full mx-auto text-center flex flex-col justify-center bg-body">
-        <p className="text-stroke text-body text-transparent font-bold md:text-4xl font-body uppercase mt-10">
+        <p className="text-stroke text-body text-transparent font-bold text-4xl font-body uppercase mt-10">
           Elevating Web Experiences
         </p>
 
-        <h1 className="md:text-3xl text-white sm:text-xl   text-l font-body font-light md:py-6 mt-10">Hi, i am Omar</h1>
-        <p className="md:text-3xl text-white sm:text-xl  text-l font-body font-light">
+        <h1 className="text-3xl text-white font-body font-light md:py-6 mt-10">Hi, i am Omar</h1>
+        <p className="text-3xl text-white sm:text-xl font-body font-light">
           Software Engineer, Front End & App Developer
         </p>
-        <p className="md:text-2xl text-xl font-light text-gray-300 font-body">
+        <p className="text-2xl font-light text-gray-300 mt-4 font-body">
           Harnessing technology to create stunning web solutions and elevate brands
         </p>
 
