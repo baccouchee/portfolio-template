@@ -2,16 +2,21 @@ import React, { useState, useEffect } from 'react'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import { motion } from 'framer-motion'
 import '../index.css'
+import { Link } from 'react-scroll'
 
 const Navbar = () => {
   let tab = [
-    { id: 'Home', label: 'Home' },
-    { id: 'Expertise', label: 'Expertise' },
-    { id: 'Experience', label: 'Experience' },
-    { id: 'Contact', label: 'Contact' },
+    { id: 'Home', label: 'Home', nav: 'hero' },
+    { id: 'Expertise', label: 'Expertise', nav: 'expertise' },
+    { id: 'Experience', label: 'Experience', nav: 'experience' },
+    { id: 'Contact', label: 'Contact', nav: 'form' },
   ]
 
   const [nav, setNav] = useState(false)
+  const handleNavItemClick = tab => {
+    setActiveTab(tab.id)
+    setNav(false) // Close the menu
+  }
 
   const handleNav = () => {
     setNav(!nav)
@@ -45,19 +50,22 @@ const Navbar = () => {
       <h1 className="w-full text-3xl font-bold text-main font-body">OMAR.</h1>
       <ul className="hidden md:flex">
         {tab.map(tab => (
-          <button
+          <Link
             key={tab.id}
+            to={tab.nav}
+            smooth={true}
+            duration={500}
             onClick={() => setActiveTab(tab.id)}
             className={`${
               activeTab == tab.id ? '' : 'hover:opacity-50'
             } relative rounded-full px-3 py-1.5 text-sm font-medium text-white outline-2
-            outline-sky-400 focus-visible:outline`}
+            outline-sky-400 cursor-pointer focus-visible:outline`}
           >
             {activeTab === tab.id && (
               <motion.div layoutId="active-pill" className="absolute inset-0 px-2 border-b-2 border-main" />
             )}
             <span className="relative font-body">{tab.label}</span>
-          </button>
+          </Link>
         ))}
       </ul>
       <div onClick={handleNav} className="block md:hidden">
@@ -70,14 +78,20 @@ const Navbar = () => {
             ? 'fixed left-0 top-0 w-[60%] h-full border-r-gray-900 bg-[#000300] ease-in-out duration-500 md:hidden'
             : 'fixed left-[-100%]'
         }
+        style={{ zIndex: 1000 }}
       >
-        <h1 className="w-full text-3xl font-bold text-[#00df9a] m-4">OMAR.</h1>
-        <ul className="uppercase p-4">
-          <li className="p-4 border-b border-gray-600">Ressources</li>
-          <li className="p-4 border-b border-gray-600">Company</li>
-          <li className="p-4 border-b border-gray-600">About</li>
-          <li className="p-4 border-b border-gray-600">Contact</li>
-          <li className="p-4">Home</li>
+        <h1 className="w-full text-3xl font-bold text-[#00df9a] m-4 font-body">OMAR.</h1>
+        <ul className="uppercase p-4 font-body">
+          {tab.map(tabItem => (
+            <li
+              key={tabItem.id}
+              className="p-4 border-b border-gray-600 cursor-pointer transition-colors hover:bg-gray-700"
+            >
+              <Link to={tabItem.nav} smooth={true} duration={500} onClick={() => handleNavItemClick(tabItem)}>
+                {tabItem.label}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
