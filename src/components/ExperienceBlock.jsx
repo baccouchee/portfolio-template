@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Experience from './Experience'
 import CV_OMAR_BACCOUCHE from '../Assets/CV_OMAR_BACCOUCHE.pdf'
 import arrow from '../Assets/right-arrow-svgrepo-com.svg'
+import '../css/ScrollPopUp.css'
+
 const ExperienceBlock = () => {
   const [hovered, setHovered] = useState(false)
   const handleMouseEnter = () => {
@@ -78,19 +80,21 @@ const ExperienceBlock = () => {
   // Add more experience objects here
   return (
     <section id="experience">
-      <h1 className="text-5xl font-bold mb-20 text-center text-white">Professional Experience</h1>
+      <h1 className="text-5xl font-bold mb-20 text-center text-white pop-animation">Professional Experience</h1>
       <div className="md:flex md:justify-center px-8 md:space-x-2">
-        <div className="flex flex-col text-left md:pl-8 md:w-[50%]">
+        <div className="flex flex-col text-left  md:pl-8 md:w-[50%] pop-animation">
           <h1 className="text-4xl font-bold text-white mb-2">Omar Baccouche</h1>
           <h3 className="text-xl text-gray-500 mb-4">Software Engineer</h3>
-          <p className="text-lg text-gray-200">
+          <p className="text-lg text-gray-200 mr-20">
             I engineer captivating digital experiences, crafting both mobile and web apps. Seamlessly merging technology
             and creativity, I create user-centered solutions that captivate and engage.
           </p>
         </div>
         <div className="flex flex-col md:w-[50%] md:pr-8">
           {experiences.map((experience, index) => (
-            <Experience key={index} experience={experience} />
+            <div className="pop-animation">
+              <Experience key={index} experience={experience} />
+            </div>
           ))}
           <div className="flex">
             <a
