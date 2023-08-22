@@ -1,5 +1,6 @@
 import React from 'react'
 import emailjs from 'emailjs-com'
+import '../css/ScrollPopUp.css'
 
 const ContactForm = () => {
   const handleSubmit = event => {
@@ -17,7 +18,7 @@ const ContactForm = () => {
 
   return (
     <section id="form" className="mb-20">
-      <div className="flex items-center justify-center min-h-screen text-white flex-col">
+      <div className="flex items-center justify-center min-h-screen text-white flex-col pop-animation">
         <h1 className="text-5xl font-bold mb-20 text-center text-white mt-20">Contact Me</h1>
         <div className="bg-white bg-opacity-10 p-8 rounded shadow-md max-w-md w-full">
           <form onSubmit={handleSubmit}>
@@ -60,7 +61,10 @@ const ContactForm = () => {
               />
             </div>
 
-            <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
+            <button
+              type="submit"
+              className="bg-transparent  border-slate-300 border py-2 px-4 rounded text-white hover:bg-transparent hover:border-main hover:text-main"
+            >
               Send
             </button>
           </form>

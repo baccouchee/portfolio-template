@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ExpertiseElem from './ExpertiseElem'
 import helloWordCode from '../Assets/hello-world-html-code.png'
 import desktop from '../Assets/desktop.svg'
@@ -34,6 +34,20 @@ const Expertise = () => {
     },
   ]
 
+  const [animationIndex, setAnimationIndex] = useState(-1)
+
+  const handleScroll = () => {
+    // Vérifiez si l'utilisateur a fait défiler suffisamment pour déclencher l'animation
+    if (animationIndex < expertiseData.length - 1 && window.scrollY > 100) {
+      setAnimationIndex(animationIndex + 1)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [animationIndex])
+
   return (
     <section id="expertise">
       <div className="w-full py-16 px-10 text-center flex flex-col font-body text-white relative" id="expertise">
@@ -50,14 +64,14 @@ const Expertise = () => {
           }}
         ></div>
 
-        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-20">My Expertise</h1>
-        <div className="text-white md:flex space-y-4 md:space-y-0">
+        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-20 pop-animation">My Expertise</h1>
+        <div className="text-white md:flex space-y-4 md:mx-10 md:space-y-0">
           {expertiseData.map((expertise, index) => (
             <div
               key={index}
               className={`w-full border-slate-500 border-2 p-4 flex-grow ${
                 index < expertiseData.length - 1 ? 'md:border-r-0' : ''
-              } ${hover ? 'hover:bg-slate-400' : ''}`}
+              } ${hover ? 'hover:bg-slate-400' : ''} ${index <= animationIndex + 1 ? 'pop-animation' : ''}`}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >

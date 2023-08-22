@@ -47,7 +47,9 @@ const Navbar = () => {
         scrolling ? 'fixed-navbar' : ''
       }`}
     >
-      <h1 className="w-full text-3xl font-bold text-main font-body">OMAR.</h1>
+      <Link to="hero" smooth={true} duration={500}>
+        <h1 className="w-full text-3xl font-bold text-main font-body hover:text-opacity-80 cursor-pointer">OMAR.</h1>
+      </Link>
       <ul className="hidden md:flex">
         {tab.map(tab => (
           <Link
