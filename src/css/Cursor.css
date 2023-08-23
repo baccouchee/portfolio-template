@@ -68,3 +68,10 @@ body {
     border: 1px solid red;
 }
 
+/* Add a media query to target smaller screens */
+@media (max-width: 768px) {
+    .cursor {
+      display: none; /* Hide the cursor on smaller screens */
+    }
+  }
+  
